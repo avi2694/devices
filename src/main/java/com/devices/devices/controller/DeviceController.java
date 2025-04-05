@@ -26,14 +26,14 @@ public class DeviceController {
     }
 
     @PostMapping("/light")
-    public ResponseEntity<String> setLightState(@RequestParam  boolean state) {
+    public ResponseEntity<String> setLightState(@RequestParam boolean state) {
         this.light.toggleSwitch(state);
-        return ResponseEntity.ok("Light state set to :" + (state?"ON":"OFF"));
+        return ResponseEntity.ok("Light state set to :" + (state ? "ON" : "OFF"));
     }
 
     @PostMapping("/fan")
     public ResponseEntity<String> setFanState(@RequestParam int speed) {
-        if(speed>=0 && speed<=2) {
+        if (speed >= 0 && speed <= 2) {
             this.fan.setSpeed(speed);
             return ResponseEntity.ok("Fan Speed set to : " + speed);
         }
@@ -43,7 +43,7 @@ public class DeviceController {
 
     @PostMapping("/ac")
     public ResponseEntity<String> setACMode(@RequestParam String mode) {
-        if(ON.equalsIgnoreCase(mode) || OFF.equalsIgnoreCase(mode)) {
+        if (ON.equalsIgnoreCase(mode) || OFF.equalsIgnoreCase(mode)) {
             this.airConditioner.setState(mode);
             return ResponseEntity.ok("AC mode set to  : " + mode);
         }
@@ -52,7 +52,7 @@ public class DeviceController {
 
     @GetMapping("/light")
     public ResponseEntity<String> getLightState() {
-        return ResponseEntity.ok("Light state set to :" + (this.light.isOn()?"ON":"OFF"));
+        return ResponseEntity.ok("Light state set to :" + (this.light.isOn() ? "ON" : "OFF"));
     }
 
     @GetMapping("/fan")

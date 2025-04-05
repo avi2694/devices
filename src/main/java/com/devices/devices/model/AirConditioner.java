@@ -5,14 +5,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class AirConditioner {
 
-    public static final String ON ="ON";
+    public static final String ON = "ON";
     public static final String OFF = "OFF";
     private boolean isOn;
 
     public void setState(String mode) {
-        if(ON.equalsIgnoreCase(mode)) {
+        if (ON.equalsIgnoreCase(mode)) {
             isOn = true;
-        } else if(OFF.equalsIgnoreCase(mode)) {
+        } else if (OFF.equalsIgnoreCase(mode)) {
             isOn = false;
         }
     }
@@ -22,6 +22,6 @@ public class AirConditioner {
     }
 
     public String getMode() {
-        return isOn?ON:OFF;
+        return isOn ? ON : OFF;
     }
 }

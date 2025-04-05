@@ -7,7 +7,7 @@ public class Fan {
     private int speed;
 
     public void setSpeed(int speed) {
-        if(speed>=0 && speed <=2) {
+        if (speed >= 0 && speed <= 2) {
             this.speed = speed;
         }
     }
@@ -17,6 +17,6 @@ public class Fan {
     }
 
     public boolean isOn() {
-        return speed>0;
+        return speed > 0;
     }
 }

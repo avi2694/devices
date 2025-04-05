@@ -12,6 +12,6 @@ public class Light {
     }
 
     public boolean isOn() {
-        return  isOn;
+        return isOn;
     }
 }
